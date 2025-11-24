@@ -1,0 +1,9 @@
+{
+  "name": "@sslpin/root",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "packageManager": "yarn@4.11.0"
+}
