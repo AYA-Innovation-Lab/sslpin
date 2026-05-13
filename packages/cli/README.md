@@ -45,6 +45,8 @@ yarn workspace sslpin build
 node packages/cli/bin/sslpin google.com
 ```
 
+`sslpin` is published as a single CLI package. The internal core workspace is bundled into the final CLI build, so end users only install `sslpin`.
+
 ## Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.

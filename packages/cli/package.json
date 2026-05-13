@@ -26,23 +26,24 @@
   "main": "dist/index.js",
   "bin": "./bin/sslpin",
   "scripts": {
-    "build": "yarn workspace @sslpin/core build && tsc -p tsconfig.json",
+    "build": "rm -rf dist && yarn workspace @sslpin/core build && tsc -p tsconfig.json --emitDeclarationOnly && node esbuild.config.mjs",
     "start": "yarn node dist/index.js",
     "test": "jest",
     "lint": "eslint src --ext .ts"
   },
   "dependencies": {
-    "@sslpin/core": "0.0.2",
     "chalk": "^4.1.2",
     "clipboardy": "^4.0.0",
     "commander": "^12.1.0",
     "ora": "^8.1.1"
   },
   "devDependencies": {
+    "@sslpin/core": "0.0.2",
     "@types/jest": "^29.5.12",
     "@types/node": "^24.10.1",
     "@typescript-eslint/eslint-plugin": "^8.47.0",
     "@typescript-eslint/parser": "^8.47.0",
+    "esbuild": "^0.24.0",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
@@ -54,7 +55,10 @@
   "packageManager": "yarn@4.11.0",
   "files": [
     "bin",
-    "dist"
+    "dist/index.js",
+    "dist/index.d.ts",
+    "dist/cli.js",
+    "dist/cli.d.ts"
   ],
   "engines": {
     "node": ">=18.0.0"

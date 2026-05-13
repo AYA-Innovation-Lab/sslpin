@@ -31,16 +31,11 @@ node packages/cli/bin/sslpin google.com
 
 ### Publishing
 
-Release packages in this order:
-
-1. `@sslpin/core`
-2. `@sslpin/companion` if needed
-3. `sslpin`
+For the public CLI release, publish `sslpin` only. `packages/core` is kept in the repo as a shared internal workspace and is bundled into the CLI build.
 
 Before publishing:
 
 ```bash
-npm_config_cache=/private/tmp/npm-cache npm pack --dry-run ./packages/core
 npm_config_cache=/private/tmp/npm-cache npm pack --dry-run ./packages/cli
 ```
 

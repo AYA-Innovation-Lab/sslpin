@@ -46,7 +46,7 @@ yarn build
 node packages/cli/bin/sslpin google.com
 ```
 
-Publish order matters: release `@sslpin/core` first, then `sslpin`.
+The published CLI is `sslpin` only. `packages/core` stays as an internal workspace package and is bundled into the CLI build.
 
 ## Contributing
 
