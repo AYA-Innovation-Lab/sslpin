@@ -3,18 +3,13 @@
     "target": "ES2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "esModuleInterop": true,
     "outDir": "dist",
     "rootDir": "src",
     "declaration": true,
-    "isolatedModules": true,
-    "resolveJsonModule": true,
     "strict": true,
+    "esModuleInterop": true,
     "skipLibCheck": true,
-    "types": ["node", "jest"]
+    "types": ["node"]
   },
-  "include": ["src"],
-  "ts-node": {
-    "esm": true
-  }
+  "include": ["src"]
 }

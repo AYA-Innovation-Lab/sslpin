@@ -1,0 +1,47 @@
+{
+  "formatter": {
+    "external": {
+      "command": "yarn",
+      "arguments": ["prettier", "--stdin-filepath", "{buffer_path}"]
+    }
+  },
+  "format_on_save": "on",
+  "code_actions_on_format": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  },
+  "languages": {
+    "JavaScript": {
+      "formatter": {
+        "external": {
+          "command": "yarn",
+          "arguments": ["prettier", "--stdin-filepath", "{buffer_path}"]
+        }
+      }
+    },
+    "TypeScript": {
+      "formatter": {
+        "external": {
+          "command": "yarn",
+          "arguments": ["prettier", "--stdin-filepath", "{buffer_path}"]
+        }
+      }
+    },
+    "TSX": {
+      "formatter": {
+        "external": {
+          "command": "yarn",
+          "arguments": ["prettier", "--stdin-filepath", "{buffer_path}"]
+        }
+      }
+    },
+    "JSON": {
+      "formatter": {
+        "external": {
+          "command": "yarn",
+          "arguments": ["prettier", "--stdin-filepath", "{buffer_path}"]
+        }
+      }
+    }
+  }
+}

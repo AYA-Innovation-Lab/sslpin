@@ -1,6 +1,6 @@
-# Contributing to SSLPing CLI
+# Contributing to SSLPin
 
-Thank you for your interest in contributing to SSLPin CLI! We welcome contributions from the community.
+Thank you for your interest in contributing to SSLPin. We welcome contributions from the community.
 
 ## Getting Started
 
@@ -13,20 +13,36 @@ Thank you for your interest in contributing to SSLPin CLI! We welcome contributi
 
 - Requires Node.js 22.11.0+ (use `nvm use` if you have nvm)
 - Uses Yarn Berry as package manager
-- Uses ESBuild for fast TypeScript compilation and bundling
-- Run `yarn build` to build the CLI (generates dist/index.js using esbuild config)
-- Run `yarn test` to run tests
-- Use `yarn start` to test the CLI locally
+- The repo is split into publishable packages:
+  - `packages/core`
+  - `packages/cli`
+  - `packages/companion`
 
-### Build Configuration
+### Common Commands
 
-The project uses ESBuild for building. Configuration is in `packages/cli/esbuild.config.js`:
+```bash
+yarn build
+yarn build:core
+yarn build:cli
+yarn build:companion
+yarn lint:cli
+node packages/cli/bin/sslpin google.com
+```
 
-- Bundles all TypeScript sources into a single ES module
-- External dependencies (node modules) are not bundled
-- Output: `dist/index.js` as ESM format for Node.js
+### Publishing
 
-To modify build settings, edit `esbuild.config.js` which uses the esbuild API.
+Release packages in this order:
+
+1. `@sslpin/core`
+2. `@sslpin/companion` if needed
+3. `sslpin`
+
+Before publishing:
+
+```bash
+npm_config_cache=/private/tmp/npm-cache npm pack --dry-run ./packages/core
+npm_config_cache=/private/tmp/npm-cache npm pack --dry-run ./packages/cli
+```
 
 ## Code Style
 

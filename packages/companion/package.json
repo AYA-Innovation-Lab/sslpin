@@ -1,0 +1,32 @@
+{
+  "name": "@sslpin/companion",
+  "version": "0.0.2",
+  "type": "module",
+  "description": "Companion process for sslpin browser integrations",
+  "main": "dist/index.js",
+  "bin": {
+    "sslpin-companion": "./dist/cli.js"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./handler": "./dist/handler.js",
+    "./protocol": "./dist/protocol.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "yarn workspace @sslpin/core build && tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@sslpin/core": "0.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT"
+}

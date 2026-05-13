@@ -1,6 +1,6 @@
 # SSLPin CLI
 
-A lightweight CLI tool that connects to an HTTPS domain, reads its SSL/TLS certificate, and generates fingerprints and SPKI pins — all locally.
+A lightweight CLI tool that inspects an HTTPS host, reads its TLS certificate chain, and prints fingerprints and SPKI pins locally.
 
 ## Features
 
@@ -13,27 +13,40 @@ A lightweight CLI tool that connects to an HTTPS domain, reads its SSL/TLS certi
 ## Installation
 
 ```bash
+# one-off
+npx sslpin google.com
+
+# global install
 npm install -g sslpin
-# or using Yarn Berry
-yarn global add sslpin
 ```
 
 ## Usage
 
 ```bash
-# Using npx (recommended)
-npx sslpin www.google.com
-
-# Or if installed globally
-sslpin www.google.com
+sslpin google.com
+sslpin google.com --json
+sslpin https://example.com --leaf-only
+sslpin example.com --copy spki
 ```
-### Options
 
-Supports HTTPS URLs (auto-strips `https://`). Use `--help` for all options.
+## Options
+
+Supports bare domains and HTTPS URLs. Use `--help` for the full list.
 
 - `-v, --version`: Show version
 - `--json`: Output in JSON format
+- `--leaf-only`: Show only the leaf certificate
+- `--copy <field>`: Copy `spki`, `sha256`, or `pem`
 - `-h, --help`: Show help
+
+## Development
+
+```bash
+yarn build
+node packages/cli/bin/sslpin google.com
+```
+
+Publish order matters: release `@sslpin/core` first, then `sslpin`.
 
 ## Contributing
 

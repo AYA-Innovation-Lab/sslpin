@@ -1,0 +1,9 @@
+export const DEFAULT_TLS_PORT = 443;
+export const MAX_PORT_NUMBER = 65_535;
+export const DEFAULT_TIMEOUT_MS = 60_000;
+export const DEFAULT_EXPIRING_SOON_DAYS = 30;
+export const MILLISECONDS_PER_DAY = 24 * 60 * 60 * 1000;
+export const LEGACY_DATA_SIZE_BYTES = 64;
+export const PEM_WRAP_WIDTH = 64;
+export const UNKNOWN_VALUE = 'Unknown';
+export const SERIALIZATION_SCHEMA_VERSION = '1.1' as const;

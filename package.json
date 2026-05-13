@@ -1,7 +1,14 @@
 {
   "name": "@sslpin/root",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
+  "scripts": {
+    "build:core": "yarn workspace @sslpin/core build",
+    "build:cli": "yarn workspace sslpin build",
+    "build:companion": "yarn workspace @sslpin/companion build",
+    "build": "yarn build:core && yarn build:cli && yarn build:companion",
+    "lint:cli": "yarn workspace sslpin lint"
+  },
   "workspaces": [
     "packages/*"
   ],
